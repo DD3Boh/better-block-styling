@@ -5,7 +5,7 @@ const styleDef = {
         "width: 100%",
     ],
     smallCard: [
-        "font-size: 16px",
+        "font-size: 20px",
         "min-height: 4vh",
         "padding-top: 1.2vh",
     ],
@@ -15,22 +15,30 @@ const styleDef = {
         "min-height: 5vh",
         "padding-bottom: 1vh",
     ],
-    fullBlue: [
-        "background-color: var(--b3-card-info-background)",
+    blueBackground: [
+        "background-color: var(--b3-card-info-background)"
+    ],
+    greenBackground: [
+        "background-color: var(--b3-card-success-background)"
+    ],
+    redBackground: [
+        "background-color: var(--b3-card-error-background)"
+    ],
+    yellowBackground: [
+        "background-color: var(--b3-card-warning-background)"
+    ],
+    blueText: [
         "color: var(--b3-card-info-color)"
     ],
-    fullGreen: [
-        "background-color: var(--b3-card-success-background)",
+    greenText: [
         "color: var(--b3-card-success-color)"
     ],
-    fullRed: [
-        "background-color: var(--b3-card-error-background)",
+    redText: [
         "color: var(--b3-card-error-color)"
     ],
-    fullYellow: [
-        "background-color: var(--b3-card-warning-background)",
+    yellowText: [
         "color: var(--b3-card-warning-color)"
-    ]
+    ],
 };
 
 const composeStyles = (...styleGroups: string[][]) =>
@@ -41,7 +49,8 @@ export const buttonConfigs = [
         value: composeStyles(
             styleDef.cardBase,
             styleDef.bigCard,
-            styleDef.fullBlue
+            styleDef.blueBackground,
+            styleDef.blueText
         ),
         label: "bigFullBlue"
     },
@@ -49,7 +58,8 @@ export const buttonConfigs = [
         value: composeStyles(
             styleDef.cardBase,
             styleDef.bigCard,
-            styleDef.fullGreen
+            styleDef.greenBackground,
+            styleDef.greenText
         ),
         label: "bigFullGreen"
     },
@@ -57,7 +67,8 @@ export const buttonConfigs = [
         value: composeStyles(
             styleDef.cardBase,
             styleDef.bigCard,
-            styleDef.fullRed
+            styleDef.redBackground,
+            styleDef.redText
         ),
         label: "bigFullRed"
     },
@@ -65,8 +76,41 @@ export const buttonConfigs = [
         value: composeStyles(
             styleDef.cardBase,
             styleDef.bigCard,
-            styleDef.fullYellow
+            styleDef.yellowBackground,
+            styleDef.yellowText
         ),
         label: "bigFullYellow"
+    },
+    {
+        value: composeStyles(
+            styleDef.cardBase,
+            styleDef.smallCard,
+            styleDef.blueBackground
+        ),
+        label: "smallBlueBackground"
+    },
+    {
+        value: composeStyles(
+            styleDef.cardBase,
+            styleDef.smallCard,
+            styleDef.greenBackground
+        ),
+        label: "smallGreenBackground"
+    },
+    {
+        value: composeStyles(
+            styleDef.cardBase,
+            styleDef.smallCard,
+            styleDef.redBackground
+        ),
+        label: "smallRedBackground"
+    },
+    {
+        value: composeStyles(
+            styleDef.cardBase,
+            styleDef.smallCard,
+            styleDef.yellowBackground
+        ),
+        label: "smallYellowBackground"
     },
 ];

@@ -4,6 +4,10 @@
         "bigFullBlue": "🔵 Big full blue",
         "bigFullGreen": "🟢 Big full green",
         "bigFullRed": "🔴 Big full red",
-        "bigFullYellow": "🟡 Big full yellow"
+        "bigFullYellow": "🟡 Big full yellow",
+        "smallBlueBackground": "🔵 Small blue background",
+        "smallGreenBackground": "🟢 Small green background",
+        "smallRedBackground": "🔴 Small red background",
+        "smallYellowBackground": "🟡 Small yellow background"
     }
 }
