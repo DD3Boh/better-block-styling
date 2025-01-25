@@ -3,7 +3,6 @@ const styleDef = {
         "text-align: center",
         "font-weight: bold",
         "width: 100%",
-        "flex: 0 0 auto"
     ],
     smallCard: [
         "font-size: 16px",
