@@ -5,52 +5,11 @@ import {
 } from "siyuan";
 import "@/index.scss";
 import { setBlockAttrs } from "./api";
-
-export const cardStyles = {
-    card: [
-      "text-align: center",
-      "padding-bottom: 10px",
-      "font-size: 32px",
-      "font-weight: bold",
-      "width: 100%",
-      "min-height: 5vh",
-      "flex: 0 0 auto"
-    ].join("; ") + ";",
-
-    cardRed: [
-      "background-color: var(--b3-card-error-background)",
-      "color: var(--b3-card-error-color)"
-    ].join("; ") + ";",
-
-    cardYellow: [
-      "background-color: var(--b3-card-warning-background)",
-      "color: var(--b3-card-warning-color)"
-    ].join("; ") + ";",
-
-    cardGreen: [
-      "background-color: var(--b3-card-success-background)",
-      "color: var(--b3-card-success-color)"
-    ].join("; ") + ";"
-};
+import { buttonConfigs } from "./style";
 
 export default class BetterCards extends Plugin {
     private isMobile: boolean;
     private blockIconEventBindThis = this.blockIconEvent.bind(this);
-
-    buttonConfigs = [
-        {
-            value: cardStyles.card + cardStyles.cardGreen,
-            label: "green"
-        },
-        {
-            value: cardStyles.card + cardStyles.cardRed,
-            label: "red"
-        },
-        {
-            value: cardStyles.card + cardStyles.cardYellow,
-            label: "yellow"
-        },
-    ];
 
     createButton(
         label: string
@@ -96,7 +55,7 @@ export default class BetterCards extends Plugin {
     private blockIconEvent({ detail }: any) {
         let subMenus = [];
 
-        this.buttonConfigs.forEach(({ value, label }) => {
+        buttonConfigs.forEach(({ value, label }) => {
             let button = this.createButton(label);
 
             button.onclick = () => {
