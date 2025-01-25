@@ -9,6 +9,11 @@ export const cardStyles = {
       "flex: 0 0 auto"
     ].join("; ") + ";",
 
+    cardBlue: [
+        "background-color: var(--b3-card-info-background)",
+        "color: var(--b3-card-info-color)"
+    ].join("; ") + ";",
+
     cardGreen: [
         "background-color: var(--b3-card-success-background)",
         "color: var(--b3-card-success-color)"
@@ -26,6 +31,10 @@ export const cardStyles = {
 };
 
 export const buttonConfigs = [
+    {
+        value: cardStyles.card + cardStyles.cardBlue,
+        label: "blue"
+    },
     {
         value: cardStyles.card + cardStyles.cardGreen,
         label: "green"

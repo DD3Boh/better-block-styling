@@ -1,6 +1,7 @@
 {
     "cards": "Cards",
     "button": {
+        "blue": "🔵 Blue",
         "green": "🟢 Green",
         "red": "🔴 Red",
         "yellow": "🟡 Yellow"
