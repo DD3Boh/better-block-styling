@@ -5,6 +5,7 @@
         "bigFullBrown": "🟤 Big full brown",
         "bigFullGreen": "🟢 Big full green",
         "bigFullOrange": "🟠 Big full orange",
+        "bigFullPurple": "🟣 Big full purple",
         "bigFullRed": "🔴 Big full red",
         "bigFullYellow": "🟡 Big full yellow",
         "bigNoBackgroundOutline": "⚪ Big no background with outline",
@@ -12,6 +13,7 @@
         "smallBrownBackground": "🟤 Small brown background",
         "smallGreenBackground": "🟢 Small green background",
         "smallOrangeBackground": "🟠 Small orange background",
+        "smallPurpleBackground": "🟣 Small purple background",
         "smallRedBackground": "🔴 Small red background",
         "smallYellowBackground": "🟡 Small yellow background",
         "smallNoBackgroundOutline": "⚪ Small no background with outline"

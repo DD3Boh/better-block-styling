@@ -31,6 +31,10 @@ const styleDef = {
         "background-color: var(--b3-font-background4)",
         "border: 1px solid var(--b3-font-background4)"
     ],
+    purpleBackground: [
+        "background-color: var(--b3-font-background10)",
+        "border: 1px solid var(--b3-font-background10)"
+    ],
     redBackground: [
         "background-color: var(--b3-card-error-background)",
         "border: 1px solid var(--b3-card-error-background)"
@@ -50,6 +54,9 @@ const styleDef = {
     ],
     orangeText: [
         "color: var(--b3-font-color4)"
+    ],
+    purpleText: [
+        "color: var(--b3-font-color10)"
     ],
     redText: [
         "color: var(--b3-card-error-color)"
@@ -101,6 +108,15 @@ export const buttonConfigs = [
             styleDef.orangeText
         ),
         label: "bigFullOrange"
+    },
+    {
+        value: composeStyles(
+            styleDef.cardBase,
+            styleDef.bigCard,
+            styleDef.purpleBackground,
+            styleDef.purpleText
+        ),
+        label: "bigFullPurple"
     },
     {
         value: composeStyles(
@@ -159,6 +175,14 @@ export const buttonConfigs = [
             styleDef.orangeBackground
         ),
         label: "smallOrangeBackground"
+    },
+    {
+        value: composeStyles(
+            styleDef.cardBase,
+            styleDef.smallCard,
+            styleDef.purpleBackground
+        ),
+        label: "smallPurpleBackground"
     },
     {
         value: composeStyles(
