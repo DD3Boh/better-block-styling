@@ -86,37 +86,10 @@ export const buttonConfigs = [
         value: composeStyles(
             styleDef.cardBase,
             styleDef.bigCard,
-            styleDef.brownBackground,
-            styleDef.brownText
-        ),
-        label: "bigFullBrown"
-    },
-    {
-        value: composeStyles(
-            styleDef.cardBase,
-            styleDef.bigCard,
             styleDef.greenBackground,
             styleDef.greenText
         ),
         label: "bigFullGreen"
-    },
-    {
-        value: composeStyles(
-            styleDef.cardBase,
-            styleDef.bigCard,
-            styleDef.orangeBackground,
-            styleDef.orangeText
-        ),
-        label: "bigFullOrange"
-    },
-    {
-        value: composeStyles(
-            styleDef.cardBase,
-            styleDef.bigCard,
-            styleDef.purpleBackground,
-            styleDef.purpleText
-        ),
-        label: "bigFullPurple"
     },
     {
         value: composeStyles(
@@ -156,33 +129,9 @@ export const buttonConfigs = [
         value: composeStyles(
             styleDef.cardBase,
             styleDef.smallCard,
-            styleDef.brownBackground
-        ),
-        label: "smallBrownBackground"
-    },
-    {
-        value: composeStyles(
-            styleDef.cardBase,
-            styleDef.smallCard,
             styleDef.greenBackground
         ),
         label: "smallGreenBackground"
-    },
-    {
-        value: composeStyles(
-            styleDef.cardBase,
-            styleDef.smallCard,
-            styleDef.orangeBackground
-        ),
-        label: "smallOrangeBackground"
-    },
-    {
-        value: composeStyles(
-            styleDef.cardBase,
-            styleDef.smallCard,
-            styleDef.purpleBackground
-        ),
-        label: "smallPurpleBackground"
     },
     {
         value: composeStyles(
@@ -207,5 +156,59 @@ export const buttonConfigs = [
             styleDef.outline
         ),
         label: "smallNoBackgroundOutline"
+    },
+]
+
+export const buttonConfigsAsri = [
+    {
+        value: composeStyles(
+            styleDef.cardBase,
+            styleDef.bigCard,
+            styleDef.brownBackground,
+            styleDef.brownText
+        ),
+        label: "bigFullBrown"
+    },
+    {
+        value: composeStyles(
+            styleDef.cardBase,
+            styleDef.bigCard,
+            styleDef.orangeBackground,
+            styleDef.orangeText
+        ),
+        label: "bigFullOrange"
+    },
+    {
+        value: composeStyles(
+            styleDef.cardBase,
+            styleDef.bigCard,
+            styleDef.purpleBackground,
+            styleDef.purpleText
+        ),
+        label: "bigFullPurple"
+    },
+    {
+        value: composeStyles(
+            styleDef.cardBase,
+            styleDef.smallCard,
+            styleDef.brownBackground
+        ),
+        label: "smallBrownBackground"
+    },
+    {
+        value: composeStyles(
+            styleDef.cardBase,
+            styleDef.smallCard,
+            styleDef.orangeBackground
+        ),
+        label: "smallOrangeBackground"
+    },
+    {
+        value: composeStyles(
+            styleDef.cardBase,
+            styleDef.smallCard,
+            styleDef.purpleBackground
+        ),
+        label: "smallPurpleBackground"
     },
 ];

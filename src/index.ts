@@ -5,7 +5,7 @@ import {
 } from "siyuan";
 import "@/index.scss";
 import { setBlockAttrs } from "./api";
-import { buttonConfigs } from "./style";
+import { buttonConfigs, buttonConfigsAsri } from "./style";
 
 export default class BetterCards extends Plugin {
     private isMobile: boolean;
@@ -71,6 +71,26 @@ export default class BetterCards extends Plugin {
         detail.menu.addItem({
             iconHTML: "",
             label: this.i18n.cards,
+            submenu: subMenus,
+        });
+
+        subMenus = [];
+        buttonConfigsAsri.forEach(({ value, label }) => {
+            let button = this.createButton(label);
+
+            button.onclick = () => {
+                for (let element of detail.blockElements)
+                    this.setStyleAttr(element.getAttribute("data-node-id"), value);
+            }
+
+            subMenus.push({
+                element: button
+            });
+        });
+
+        detail.menu.addItem({
+            iconHTML: "",
+            label: this.i18n.cardsAsri,
             submenu: subMenus,
         });
     }
