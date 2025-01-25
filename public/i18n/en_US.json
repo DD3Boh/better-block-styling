@@ -5,9 +5,11 @@
         "bigFullGreen": "🟢 Big full green",
         "bigFullRed": "🔴 Big full red",
         "bigFullYellow": "🟡 Big full yellow",
+        "bigNoBackgroundOutline": "⚪ Big no background with outline",
         "smallBlueBackground": "🔵 Small blue background",
         "smallGreenBackground": "🟢 Small green background",
         "smallRedBackground": "🔴 Small red background",
-        "smallYellowBackground": "🟡 Small yellow background"
+        "smallYellowBackground": "🟡 Small yellow background",
+        "smallNoBackgroundOutline": "⚪ Small no background with outline"
     }
 }

@@ -15,6 +15,9 @@ const styleDef = {
         "font-size: 32px",
         "font-weight: bold"
     ],
+    outline: [
+        "border: 1px solid",
+    ],
     blueBackground: [
         "background-color: var(--b3-card-info-background)"
     ],
@@ -84,6 +87,14 @@ export const buttonConfigs = [
     {
         value: composeStyles(
             styleDef.cardBase,
+            styleDef.bigCard,
+            styleDef.outline
+        ),
+        label: "bigNoBackgroundOutline"
+    },
+    {
+        value: composeStyles(
+            styleDef.cardBase,
             styleDef.smallCard,
             styleDef.blueBackground
         ),
@@ -112,5 +123,13 @@ export const buttonConfigs = [
             styleDef.yellowBackground
         ),
         label: "smallYellowBackground"
+    },
+    {
+        value: composeStyles(
+            styleDef.cardBase,
+            styleDef.smallCard,
+            styleDef.outline
+        ),
+        label: "smallNoBackgroundOutline"
     },
 ];
