@@ -1,19 +1,18 @@
 const styleDef = {
     cardBase: [
-        "text-align: center",
-        "font-weight: bold",
-        "width: 100%",
+        "width: 99%",
+        "align-self: center",
+        "padding-top: 0.5em",
+        "padding-bottom: 0.5em",
     ],
     smallCard: [
         "font-size: 20px",
-        "min-height: 4vh",
-        "padding-top: 1.2vh",
+        "text-indent: 0.5em",
     ],
     bigCard: [
+        "text-align: center",
         "font-size: 32px",
-        "font-weight: bold",
-        "min-height: 5vh",
-        "padding-bottom: 1vh",
+        "font-weight: bold"
     ],
     blueBackground: [
         "background-color: var(--b3-card-info-background)"
