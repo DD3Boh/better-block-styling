@@ -43,7 +43,7 @@ export const buttonConfigs = [
             styleDef.bigCard,
             styleDef.fullBlue
         ),
-        label: "blue"
+        label: "bigFullBlue"
     },
     {
         value: composeStyles(
@@ -51,7 +51,7 @@ export const buttonConfigs = [
             styleDef.bigCard,
             styleDef.fullGreen
         ),
-        label: "green"
+        label: "bigFullGreen"
     },
     {
         value: composeStyles(
@@ -59,7 +59,7 @@ export const buttonConfigs = [
             styleDef.bigCard,
             styleDef.fullRed
         ),
-        label: "red"
+        label: "bigFullRed"
     },
     {
         value: composeStyles(
@@ -67,6 +67,6 @@ export const buttonConfigs = [
             styleDef.bigCard,
             styleDef.fullYellow
         ),
-        label: "yellow"
+        label: "bigFullYellow"
     },
 ];

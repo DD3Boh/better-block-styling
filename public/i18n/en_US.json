@@ -1,9 +1,9 @@
 {
     "cards": "Cards",
     "button": {
-        "blue": "🔵 Blue",
-        "green": "🟢 Green",
-        "red": "🔴 Red",
-        "yellow": "🟡 Yellow"
+        "bigFullBlue": "🔵 Big full blue",
+        "bigFullGreen": "🟢 Big full green",
+        "bigFullRed": "🔴 Big full red",
+        "bigFullYellow": "🟡 Big full yellow"
     }
 }
