@@ -16,7 +16,7 @@ const styleDef = {
         "font-weight: bold"
     ],
     outline: [
-        "border: 1px solid",
+        "border: 1px solid rgb(from var(--b3-card-info-color) r g b / 40%)"
     ],
     blueBackground: [
         "background-color: var(--b3-card-info-background)"
