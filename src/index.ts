@@ -56,6 +56,14 @@ export default class BetterCards extends Plugin {
         let subMenus = [];
 
         buttonConfigs.forEach(({ value, label }) => {
+            if (value === "separator") {
+                subMenus.push({
+                    type: "separator"
+                });
+
+                return;
+            }
+
             let button = this.createButton(label);
 
             button.onclick = () => {
@@ -76,6 +84,14 @@ export default class BetterCards extends Plugin {
 
         subMenus = [];
         buttonConfigsAsri.forEach(({ value, label }) => {
+            if (value === "separator") {
+                subMenus.push({
+                    type: "separator"
+                });
+
+                return;
+            }
+
             let button = this.createButton(label);
 
             button.onclick = () => {

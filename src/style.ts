@@ -118,6 +118,9 @@ export const buttonConfigs = [
         label: "bigNoBackgroundOutline"
     },
     {
+        value: "separator",
+    },
+    {
         value: composeStyles(
             styleDef.cardBase,
             styleDef.smallCard,
@@ -186,6 +189,9 @@ export const buttonConfigsAsri = [
             styleDef.purpleText
         ),
         label: "bigFullPurple"
+    },
+    {
+        value: "separator",
     },
     {
         value: composeStyles(
