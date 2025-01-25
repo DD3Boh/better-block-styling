@@ -19,6 +19,10 @@ const styleDef = {
         "background-color: var(--b3-card-info-background)",
         "border: 1px solid var(--b3-card-info-background)"
     ],
+    brownBackground: [
+        "background-color: var(--b3-font-background3)",
+        "border: 1px solid var(--b3-font-background3)"
+    ],
     greenBackground: [
         "background-color: var(--b3-card-success-background)",
         "border: 1px solid var(--b3-card-success-background)"
@@ -33,6 +37,9 @@ const styleDef = {
     ],
     blueText: [
         "color: var(--b3-card-info-color)"
+    ],
+    brownText: [
+        "color: var(--b3-font-color3)"
     ],
     greenText: [
         "color: var(--b3-card-success-color)"
@@ -60,6 +67,15 @@ export const buttonConfigs = [
             styleDef.blueText
         ),
         label: "bigFullBlue"
+    },
+    {
+        value: composeStyles(
+            styleDef.cardBase,
+            styleDef.bigCard,
+            styleDef.brownBackground,
+            styleDef.brownText
+        ),
+        label: "bigFullBrown"
     },
     {
         value: composeStyles(
@@ -103,6 +119,14 @@ export const buttonConfigs = [
             styleDef.blueBackground
         ),
         label: "smallBlueBackground"
+    },
+    {
+        value: composeStyles(
+            styleDef.cardBase,
+            styleDef.smallCard,
+            styleDef.brownBackground
+        ),
+        label: "smallBrownBackground"
     },
     {
         value: composeStyles(

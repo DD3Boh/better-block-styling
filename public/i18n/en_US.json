@@ -2,11 +2,13 @@
     "cards": "Cards",
     "button": {
         "bigFullBlue": "🔵 Big full blue",
+        "bigFullBrown": "🟤 Big full brown",
         "bigFullGreen": "🟢 Big full green",
         "bigFullRed": "🔴 Big full red",
         "bigFullYellow": "🟡 Big full yellow",
         "bigNoBackgroundOutline": "⚪ Big no background with outline",
         "smallBlueBackground": "🔵 Small blue background",
+        "smallBrownBackground": "🟤 Small brown background",
         "smallGreenBackground": "🟢 Small green background",
         "smallRedBackground": "🔴 Small red background",
         "smallYellowBackground": "🟡 Small yellow background",
