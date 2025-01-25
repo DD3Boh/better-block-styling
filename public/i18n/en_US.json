@@ -1,8 +1,8 @@
 {
     "cards": "Cards",
     "button": {
-        "green": "Green",
-        "red": "Red",
-        "yellow": "Yellow"
+        "green": "🟢 Green",
+        "red": "🔴 Red",
+        "yellow": "🟡 Yellow"
     }
 }
