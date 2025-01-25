@@ -4,6 +4,7 @@ const styleDef = {
         "align-self: center",
         "padding-top: 0.5em",
         "padding-bottom: 0.5em",
+        "text-decoration-skip-ink: none",
     ],
     smallCard: [
         "font-size: 20px",
