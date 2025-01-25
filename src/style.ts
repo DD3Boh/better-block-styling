@@ -19,16 +19,20 @@ const styleDef = {
         "border: 1px solid rgb(from var(--b3-card-info-color) r g b / 40%)"
     ],
     blueBackground: [
-        "background-color: var(--b3-card-info-background)"
+        "background-color: var(--b3-card-info-background)",
+        "border: 1px solid var(--b3-card-info-background)"
     ],
     greenBackground: [
-        "background-color: var(--b3-card-success-background)"
+        "background-color: var(--b3-card-success-background)",
+        "border: 1px solid var(--b3-card-success-background)"
     ],
     redBackground: [
-        "background-color: var(--b3-card-error-background)"
+        "background-color: var(--b3-card-error-background)",
+        "border: 1px solid var(--b3-card-error-background)"
     ],
     yellowBackground: [
-        "background-color: var(--b3-card-warning-background)"
+        "background-color: var(--b3-card-warning-background)",
+        "border: 1px solid var(--b3-card-warning-background)"
     ],
     blueText: [
         "color: var(--b3-card-info-color)"
