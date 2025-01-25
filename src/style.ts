@@ -6,17 +6,14 @@ const styleDef = {
         "padding-bottom: 0.5em",
         "text-decoration-skip-ink: none",
     ],
-    smallCard: [
-        "font-size: 20px",
-        "text-indent: 0.5em",
-    ],
     bigCard: [
         "text-align: center",
         "font-size: 32px",
         "font-weight: bold"
     ],
-    outline: [
-        "border: 1px solid rgb(from var(--b3-card-info-color) r g b / 40%)"
+    smallCard: [
+        "font-size: 20px",
+        "text-indent: 0.5em",
     ],
     blueBackground: [
         "background-color: var(--b3-card-info-background)",
@@ -45,6 +42,9 @@ const styleDef = {
     ],
     yellowText: [
         "color: var(--b3-card-warning-color)"
+    ],
+    outline: [
+        "border: 1px solid rgb(from var(--b3-card-info-color) r g b / 40%)"
     ],
 };
 
