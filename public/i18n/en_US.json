@@ -1,2 +1,8 @@
 {
+    "cards": "Cards",
+    "button": {
+        "green": "Green",
+        "red": "Red",
+        "yellow": "Yellow"
+    }
 }
