@@ -1,7 +1,7 @@
 {
-  "name": "better-cards",
+  "name": "better-block-styling",
   "author": "DD3Boh",
-  "url": "https://github.com/DD3Boh/better-cards",
+  "url": "https://github.com/DD3Boh/better-block-styling",
   "version": "1.0.0",
   "minAppVersion": "3.0.12",
   "backends": [
@@ -21,22 +21,23 @@
     "desktop-window"
   ],
   "displayName": {
-    "en_US": "Better cards"
+    "en_US": "Better block styling"
   },
   "description": {
-    "en_US": "A plugin to make cards better and easier to use."
+    "en_US": "A plugin to style blocks more easily, create cards and more."
   },
   "readme": {
     "en_US": "README.md"
   },
   "funding": {
     "custom": [
-      ""
+      "https://paypal.me/DD3Boh"
     ]
   },
   "keywords": [
     "cards",
     "better",
-    "improvements"
+    "styling",
+    "blocks"
   ]
 }
