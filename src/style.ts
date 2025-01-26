@@ -173,21 +173,6 @@ export const buttonConfigs = [
         ),
         label: "smallNoBackgroundOutline"
     },
-    {
-        value: "separator",
-    },
-    {
-        value: composeStyles(
-            styleDef.slimSuperBlock,
-        ),
-        label: "slimSuperBlock"
-    },
-    {
-        value: composeStyles(
-            styleDef.slimEmbeddedBlock,
-        ),
-        label: "slimEmbeddedBlock"
-    },
 ]
 
 export const buttonConfigsAsri = [
@@ -246,3 +231,18 @@ export const buttonConfigsAsri = [
         label: "smallPurpleBackground"
     },
 ];
+
+export const buttonConfigsBlocks = [
+    {
+        value: composeStyles(
+            styleDef.slimSuperBlock,
+        ),
+        label: "slimSuperBlock"
+    },
+    {
+        value: composeStyles(
+            styleDef.slimEmbeddedBlock,
+        ),
+        label: "slimEmbeddedBlock"
+    },
+]
