@@ -5,6 +5,8 @@ const styleDef = {
         "padding-top: 0.5em",
         "padding-bottom: 0.5em",
         "text-decoration-skip-ink: none",
+        "margin-top: 0.2em",
+        "margin-bottom: 0.2em",
     ],
     bigCard: [
         "text-align: center",
@@ -67,6 +69,13 @@ const styleDef = {
     outline: [
         "border: 1px solid rgb(from var(--b3-card-info-color) r g b / 40%)"
     ],
+
+    slimSuperBlock: [
+        "align-self: center",
+        "width: 100%",
+        "padding: 0px",
+        "margin: 0px",
+    ]
 };
 
 const composeStyles = (...styleGroups: string[][]) =>
@@ -160,6 +169,15 @@ export const buttonConfigs = [
         ),
         label: "smallNoBackgroundOutline"
     },
+    {
+        value: "separator",
+    },
+    {
+        value: composeStyles(
+            styleDef.slimSuperBlock,
+        ),
+        label: "slimSuperBlock"
+    }
 ]
 
 export const buttonConfigsAsri = [
