@@ -85,7 +85,7 @@ const styleDef = {
 const composeStyles = (...styleGroups: string[][]) =>
     styleGroups.flat().join('; ') + ';';
 
-export const buttonConfigs = [
+export const buttonCardsGlobal = [
     {
         value: composeStyles(
             styleDef.cardBase,
@@ -173,9 +173,9 @@ export const buttonConfigs = [
         ),
         label: "smallNoBackgroundOutline"
     },
-]
+];
 
-export const buttonConfigsAsri = [
+export const buttonCardsAsri = [
     {
         value: composeStyles(
             styleDef.cardBase,
@@ -232,7 +232,7 @@ export const buttonConfigsAsri = [
     },
 ];
 
-export const buttonConfigsBlocks = [
+export const buttonBlocks = [
     {
         value: composeStyles(
             styleDef.slimSuperBlock,
@@ -245,4 +245,10 @@ export const buttonConfigsBlocks = [
         ),
         label: "slimEmbeddedBlock"
     },
-]
+];
+
+export const buttonConfigs = [
+    { config: buttonCardsGlobal, labelKey: 'cards' },
+    { config: buttonCardsAsri, labelKey: 'cardsAsri' },
+    { config: buttonBlocks, labelKey: 'blocks' }
+];

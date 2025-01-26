@@ -5,7 +5,7 @@ import {
 } from "siyuan";
 import "@/index.scss";
 import { setBlockAttrs } from "./api";
-import { buttonConfigs, buttonConfigsAsri, buttonConfigsBlocks } from "./style";
+import { buttonConfigs } from "./style";
 
 export default class BetterCards extends Plugin {
     private isMobile: boolean;
@@ -53,89 +53,27 @@ export default class BetterCards extends Plugin {
     }
 
     private blockIconEvent({ detail }: any) {
-        let subMenus = [];
+        buttonConfigs.forEach(({ config, labelKey }) => {
+            const subMenus = [];
+            config.forEach(({ value, label }) => {
+                if (value === "separator") {
+                    subMenus.push({ type: "separator" });
+                    return;
+                }
 
-        buttonConfigs.forEach(({ value, label }) => {
-            if (value === "separator") {
-                subMenus.push({
-                    type: "separator"
-                });
-
-                return;
-            }
-
-            let button = this.createButton(label);
-
-            button.onclick = () => {
-                for (let element of detail.blockElements)
-                    this.setStyleAttr(element.getAttribute("data-node-id"), value);
-            }
-
-            subMenus.push({
-                element: button
+                const button = this.createButton(label);
+                button.onclick = () => {
+                    for (const element of detail.blockElements)
+                        this.setStyleAttr(element.getAttribute("data-node-id"), value);
+                };
+                subMenus.push({ element: button });
             });
-        });
 
-        detail.menu.addItem({
-            iconHTML: "",
-            label: this.i18n.cards,
-            submenu: subMenus,
-        });
-
-        subMenus = [];
-        buttonConfigsAsri.forEach(({ value, label }) => {
-            if (value === "separator") {
-                subMenus.push({
-                    type: "separator"
-                });
-
-                return;
-            }
-
-            let button = this.createButton(label);
-
-            button.onclick = () => {
-                for (let element of detail.blockElements)
-                    this.setStyleAttr(element.getAttribute("data-node-id"), value);
-            }
-
-            subMenus.push({
-                element: button
+            detail.menu.addItem({
+                iconHTML: "",
+                label: this.i18n[labelKey],
+                submenu: subMenus,
             });
-        });
-
-        detail.menu.addItem({
-            iconHTML: "",
-            label: this.i18n.cardsAsri,
-            submenu: subMenus,
-        });
-
-        subMenus = [];
-        buttonConfigsBlocks.forEach(({ value, label }) => {
-            if (value === "separator") {
-                subMenus.push({
-                    type: "separator"
-                });
-
-                return;
-            }
-
-            let button = this.createButton(label);
-
-            button.onclick = () => {
-                for (let element of detail.blockElements)
-                    this.setStyleAttr(element.getAttribute("data-node-id"), value);
-            }
-
-            subMenus.push({
-                element: button
-            });
-        });
-
-        detail.menu.addItem({
-            iconHTML: "",
-            label: this.i18n.blocks,
-            submenu: subMenus,
         });
     }
 }
