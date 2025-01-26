@@ -1,7 +1,5 @@
 const styleDef = {
     cardBase: [
-        "width: 99%",
-        "align-self: center",
         "padding-top: 0.5em",
         "padding-bottom: 0.5em",
         "text-decoration-skip-ink: none",
@@ -71,7 +69,6 @@ const styleDef = {
     ],
 
     slimSuperBlock: [
-        "align-self: center",
         "width: 100%",
         "padding: 0px",
         "margin: 0px",
