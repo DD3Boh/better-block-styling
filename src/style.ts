@@ -72,6 +72,13 @@ const styleDef = {
         "width: 100%",
         "padding: 0px",
         "margin: 0px",
+    ],
+
+    slimEmbeddedBlock: [
+        "width: 100%",
+        "padding: 0px",
+        "margin: 0px",
+        "background: transparent"
     ]
 };
 
@@ -174,7 +181,13 @@ export const buttonConfigs = [
             styleDef.slimSuperBlock,
         ),
         label: "slimSuperBlock"
-    }
+    },
+    {
+        value: composeStyles(
+            styleDef.slimEmbeddedBlock,
+        ),
+        label: "slimEmbeddedBlock"
+    },
 ]
 
 export const buttonConfigsAsri = [
