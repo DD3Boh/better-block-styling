@@ -3,17 +3,19 @@ const styleDef = {
         "padding-top: 0.5em",
         "padding-bottom: 0.5em",
         "text-decoration-skip-ink: none",
-        "margin-top: 0.2em",
-        "margin-bottom: 0.2em",
     ],
     bigCard: [
         "text-align: center",
         "font-size: 32px",
-        "font-weight: bold"
+        "font-weight: bold",
+        "margin-top: 0.2em",
+        "margin-bottom: 0.2em",
     ],
     smallCard: [
         "font-size: 20px",
         "text-indent: 0.5em",
+        "margin-top: 0.5em",
+        "margin-bottom: 0.5em",
     ],
     blueBackground: [
         "background-color: var(--b3-card-info-background)",
