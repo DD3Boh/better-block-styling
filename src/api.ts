@@ -141,6 +141,14 @@ export async function getIDsByHPath(notebook: NotebookId, path: string): Promise
     return request(url, data);
 }
 
+export async function getDocInfo(blockId: string) {
+    let data = {
+        id: blockId
+    }
+    let url = '/api/block/getDocInfo';
+    return request(url, data);
+}
+
 // **************************************** Asset Files ****************************************
 
 export async function upload(assetsDirPath: string, files: any[]): Promise<IResUpload> {
