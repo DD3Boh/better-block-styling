@@ -4,8 +4,9 @@ import {
     getBackend,
 } from "siyuan";
 import "@/index.scss";
-import { setBlockAttrs } from "./api";
+import { setBlockAttrs, updateBlock } from "./api";
 import { buttonConfigs } from "./style";
+import { queryDocIcon } from "./icons";
 
 export default class BetterCards extends Plugin {
     private isMobile: boolean;
@@ -52,6 +53,27 @@ export default class BetterCards extends Plugin {
         });
     }
 
+    async insertRefIcon(outerElement) {
+        let blockId = outerElement.getAttribute("data-node-id")
+        let ref_list = outerElement.querySelectorAll("span[data-type='block-ref']");
+
+        ref_list.forEach(async (element) => {
+            let refBlockId = element.attributes["data-id"].value;
+            let icon = await queryDocIcon(refBlockId);
+            let iconHTML = `<span data-type="emoji">${icon} </span>`;
+            let prevSibling = element?.previousElementSibling;
+
+            let elementHasIcon = prevSibling?.attributes["data-type"]?.value === "emoji";
+
+            if (!elementHasIcon)
+                await element.insertAdjacentHTML('beforebegin', iconHTML);
+            else if (prevSibling?.innerText.trim() !== icon)
+                prevSibling.outerHTML = iconHTML;
+
+            await updateBlock("dom", outerElement.outerHTML, blockId);
+        });
+    }
+
     private blockIconEvent({ detail }: any) {
         buttonConfigs.forEach(({ config, labelKey }) => {
             const subMenus = [];
@@ -63,8 +85,20 @@ export default class BetterCards extends Plugin {
 
                 const button = this.createButton(label);
                 button.onclick = () => {
-                    for (const element of detail.blockElements)
-                        this.setStyleAttr(element.getAttribute("data-node-id"), value);
+                    detail.blockElements.forEach((element) => {
+                        switch (value) {
+                            case "insertRefIcons":
+                                this.insertRefIcon(element);
+                                break;
+
+                            default:
+                                this.setStyleAttr(
+                                    element.getAttribute("data-node-id"),
+                                    value
+                                );
+                                break;
+                        }
+                    });
                 };
                 subMenus.push({ element: button });
             });

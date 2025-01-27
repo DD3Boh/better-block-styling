@@ -247,6 +247,10 @@ export const buttonBlocks = [
         ),
         label: "slimEmbeddedBlock"
     },
+    {
+        value: "insertRefIcons",
+        label: "insertRefIcons"
+    }
 ];
 
 export const buttonConfigs = [
