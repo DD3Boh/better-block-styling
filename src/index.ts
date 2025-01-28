@@ -5,7 +5,7 @@ import {
 } from "siyuan";
 import "@/index.scss";
 import { setBlockAttrs, updateBlock } from "./api";
-import { buttonConfigs } from "./style";
+import { buttonConfigs } from "./styledefs";
 import { queryDocIcon } from "./icons";
 
 export default class BetterCards extends Plugin {
