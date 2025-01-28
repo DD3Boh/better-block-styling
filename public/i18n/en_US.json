@@ -21,6 +21,7 @@
         "smallNoBackgroundOutline": "⚪ Small no background with outline",
         "slimSuperBlock": "Slim Superblock",
         "slimEmbeddedBlock": "Slim Embedded block",
-        "insertRefIcons": "Insert ref icons"
+        "insertRefIcons": "Insert ref icons",
+        "refToEmbed": "Convert Ref to Embed Block"
     }
 }

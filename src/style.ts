@@ -250,6 +250,10 @@ export const buttonBlocks = [
     {
         value: "insertRefIcons",
         label: "insertRefIcons"
+    },
+    {
+        value: "refToEmbed",
+        label: "refToEmbed"
     }
 ];
 

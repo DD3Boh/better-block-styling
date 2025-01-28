@@ -74,6 +74,21 @@ export default class BetterCards extends Plugin {
         });
     }
 
+    async refToEmbed(outerElement: Element) {
+        let blockId = outerElement.getAttribute("data-node-id")
+        let element = outerElement.querySelector("span[data-type='block-ref']");
+        let refBlockId = element?.attributes["data-id"]?.value;
+
+        if (!refBlockId) return;
+
+        let html = `
+            <div data-content="select * from blocks where id='${refBlockId}'"
+            data-node-id="${blockId}"
+            data-type="NodeBlockQueryEmbed"/>
+        `
+        updateBlock("dom", html, blockId);
+    }
+
     private blockIconEvent({ detail }: any) {
         buttonConfigs.forEach(({ config, labelKey }) => {
             const subMenus = [];
@@ -89,6 +104,10 @@ export default class BetterCards extends Plugin {
                         switch (value) {
                             case "insertRefIcons":
                                 this.insertRefIcon(element);
+                                break;
+
+                            case "refToEmbed":
+                                this.refToEmbed(element);
                                 break;
 
                             default:
