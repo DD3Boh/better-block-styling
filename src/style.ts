@@ -76,7 +76,7 @@ const styleDef = {
         "margin: 0px",
     ],
 
-    slimEmbeddedBlock: [
+    slimEmbedBlock: [
         "width: 100%",
         "padding: 0px",
         "margin: 0px",
@@ -243,9 +243,9 @@ export const buttonBlocks = [
     },
     {
         value: composeStyles(
-            styleDef.slimEmbeddedBlock,
+            styleDef.slimEmbedBlock,
         ),
-        label: "slimEmbeddedBlock"
+        label: "slimEmbedBlock"
     },
     {
         value: "insertRefIcons",
