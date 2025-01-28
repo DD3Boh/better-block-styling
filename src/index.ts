@@ -114,6 +114,16 @@ export default class BetterCards extends Plugin {
         await updateBlock("dom", outerElement.outerHTML, blockId);
     }
 
+    async slimEmbedBlock(element: Element, value: string) {
+        const blockId = element.getAttribute("data-node-id");
+        if (!blockId) return;
+
+        let isEmbedBlock = element.getAttribute("data-type") === "NodeBlockQueryEmbed";
+        if (!isEmbedBlock) return;
+
+        this.setStyleAttr(blockId, value);
+    }
+
     private blockIconEvent({ detail }: any) {
         buttonConfigs.forEach(({ config, labelKey }) => {
             const subMenus = [];
@@ -126,7 +136,7 @@ export default class BetterCards extends Plugin {
                 const button = this.createButton(label);
                 button.onclick = () => {
                     detail.blockElements.forEach((element) => {
-                        switch (value) {
+                        switch (label) {
                             case "insertRefIcons":
                                 this.insertRefIcon(element);
                                 break;
@@ -137,6 +147,10 @@ export default class BetterCards extends Plugin {
 
                             case "linkToRef":
                                 this.linkToRef(element);
+                                break;
+
+                            case "slimEmbedBlock":
+                                this.slimEmbedBlock(element, value);
                                 break;
 
                             default:
