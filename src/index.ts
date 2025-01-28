@@ -4,9 +4,8 @@ import {
     getBackend,
 } from "siyuan";
 import "@/index.scss";
-import { setBlockAttrs, updateBlock } from "./api";
 import { buttonConfigs } from "./styledefs";
-import { queryDocIcon } from "./icons";
+import * as style from "./style";
 
 export default class BetterCards extends Plugin {
     private isMobile: boolean;
@@ -47,83 +46,6 @@ export default class BetterCards extends Plugin {
         console.log("uninstall");
     }
 
-    async setStyleAttr(blockId, value) {
-        setBlockAttrs(blockId, {
-          style: value
-        });
-    }
-
-    async insertRefIcon(outerElement) {
-        let blockId = outerElement.getAttribute("data-node-id")
-        let ref_list = outerElement.querySelectorAll("span[data-type='block-ref']");
-
-        ref_list.forEach(async (element) => {
-            let refBlockId = element.attributes["data-id"].value;
-            let icon = await queryDocIcon(refBlockId);
-            let iconHTML = `<span data-type="emoji">${icon} </span>`;
-            let prevSibling = element?.previousElementSibling;
-
-            let elementHasIcon = prevSibling?.attributes["data-type"]?.value === "emoji";
-
-            if (!elementHasIcon)
-                await element.insertAdjacentHTML('beforebegin', iconHTML);
-            else if (prevSibling?.innerText.trim() !== icon)
-                prevSibling.outerHTML = iconHTML;
-
-            await updateBlock("dom", outerElement.outerHTML, blockId);
-        });
-    }
-
-    async refToEmbed(outerElement: Element) {
-        let blockId = outerElement.getAttribute("data-node-id")
-        let element = outerElement.querySelector("span[data-type='block-ref']");
-        let refBlockId = element?.attributes["data-id"]?.value;
-
-        if (!refBlockId) return;
-
-        let html = `
-            <div data-content="select * from blocks where id='${refBlockId}'"
-            data-node-id="${blockId}"
-            data-type="NodeBlockQueryEmbed"/>
-        `
-        updateBlock("dom", html, blockId);
-    }
-
-    async linkToRef(outerElement: Element) {
-        const blockId = outerElement.getAttribute("data-node-id");
-        if (!blockId) return;
-
-        const linkElements = outerElement.querySelectorAll('span[data-type="a"][data-href]');
-
-        if (linkElements.length === 0) return;
-
-        linkElements.forEach(linkElement => {
-            const href = linkElement.getAttribute("data-href");
-            if (!href || !href.startsWith('siyuan://blocks/')) return;
-
-            const blockIdFromHref = href.replace('siyuan://blocks/', '');
-
-            const refSpan = document.createElement('span');
-            refSpan.setAttribute('data-type', 'block-ref');
-            refSpan.setAttribute('data-id', blockIdFromHref);
-            refSpan.innerHTML = linkElement.innerHTML;
-
-            linkElement.replaceWith(refSpan);
-        });
-
-        await updateBlock("dom", outerElement.outerHTML, blockId);
-    }
-
-    async slimEmbedBlock(element: Element, value: string) {
-        const blockId = element.getAttribute("data-node-id");
-        if (!blockId) return;
-
-        let isEmbedBlock = element.getAttribute("data-type") === "NodeBlockQueryEmbed";
-        if (!isEmbedBlock) return;
-
-        this.setStyleAttr(blockId, value);
-    }
-
     private blockIconEvent({ detail }: any) {
         buttonConfigs.forEach(({ config, labelKey }) => {
             const subMenus = [];
@@ -138,23 +60,23 @@ export default class BetterCards extends Plugin {
                     detail.blockElements.forEach((element) => {
                         switch (label) {
                             case "insertRefIcons":
-                                this.insertRefIcon(element);
+                                style.insertRefIcon(element);
                                 break;
 
                             case "refToEmbed":
-                                this.refToEmbed(element);
+                                style.refToEmbed(element);
                                 break;
 
                             case "linkToRef":
-                                this.linkToRef(element);
+                                style.linkToRef(element);
                                 break;
 
                             case "slimEmbedBlock":
-                                this.slimEmbedBlock(element, value);
+                                style.slimEmbedBlock(element, value);
                                 break;
 
                             default:
-                                this.setStyleAttr(
+                                style.setStyleAttr(
                                     element.getAttribute("data-node-id"),
                                     value
                                 );
