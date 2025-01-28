@@ -254,6 +254,10 @@ export const buttonBlocks = [
     {
         value: "refToEmbed",
         label: "refToEmbed"
+    },
+    {
+        value: "linkToRef",
+        label: "linkToRef"
     }
 ];
 

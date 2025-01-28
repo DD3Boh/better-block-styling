@@ -89,6 +89,31 @@ export default class BetterCards extends Plugin {
         updateBlock("dom", html, blockId);
     }
 
+    async linkToRef(outerElement: Element) {
+        const blockId = outerElement.getAttribute("data-node-id");
+        if (!blockId) return;
+
+        const linkElements = outerElement.querySelectorAll('span[data-type="a"][data-href]');
+
+        if (linkElements.length === 0) return;
+
+        linkElements.forEach(linkElement => {
+            const href = linkElement.getAttribute("data-href");
+            if (!href || !href.startsWith('siyuan://blocks/')) return;
+
+            const blockIdFromHref = href.replace('siyuan://blocks/', '');
+
+            const refSpan = document.createElement('span');
+            refSpan.setAttribute('data-type', 'block-ref');
+            refSpan.setAttribute('data-id', blockIdFromHref);
+            refSpan.innerHTML = linkElement.innerHTML;
+
+            linkElement.replaceWith(refSpan);
+        });
+
+        await updateBlock("dom", outerElement.outerHTML, blockId);
+    }
+
     private blockIconEvent({ detail }: any) {
         buttonConfigs.forEach(({ config, labelKey }) => {
             const subMenus = [];
@@ -108,6 +133,10 @@ export default class BetterCards extends Plugin {
 
                             case "refToEmbed":
                                 this.refToEmbed(element);
+                                break;
+
+                            case "linkToRef":
+                                this.linkToRef(element);
                                 break;
 
                             default:

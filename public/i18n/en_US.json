@@ -22,6 +22,7 @@
         "slimSuperBlock": "Slim Superblock",
         "slimEmbedBlock": "Slim Embed block",
         "insertRefIcons": "Insert ref icons",
-        "refToEmbed": "Convert Ref to Embed Block"
+        "refToEmbed": "Convert Ref to Embed Block",
+        "linkToRef": "Convert Link to Ref"
     }
 }
