@@ -60,7 +60,7 @@ export default class BetterCards extends Plugin {
                     detail.blockElements.forEach((element) => {
                         switch (label) {
                             case "insertRefIcons":
-                                style.insertRefIcon(element);
+                                style.insertIcon(element);
                                 break;
 
                             case "refToEmbed":

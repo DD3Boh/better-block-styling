@@ -8,13 +8,33 @@ export const setStyleAttr = async (blockId, value) => {
     });
 }
 
-export const insertRefIcon = async (outerElement) => {
+export const insertIcon = async (outerElement) => {
     let blockId = outerElement.getAttribute("data-node-id")
     let ref_list = outerElement.querySelectorAll("span[data-type='block-ref']");
+    let link_list = outerElement.querySelectorAll("span[data-type='a'][data-href^='siyuan://blocks/']");
 
     ref_list.forEach(async (element) => {
         let refBlockId = element.attributes["data-id"].value;
         let icon = await queryDocIcon(refBlockId);
+        let iconHTML = `<span data-type="emoji">${icon} </span>`;
+        let prevSibling = element?.previousElementSibling;
+
+        let elementHasIcon = prevSibling?.attributes["data-type"]?.value === "emoji";
+
+        if (!elementHasIcon)
+            await element.insertAdjacentHTML('beforebegin', iconHTML);
+        else if (prevSibling?.innerText.trim() !== icon)
+            prevSibling.outerHTML = iconHTML;
+
+        await updateBlock("dom", outerElement.outerHTML, blockId);
+    });
+
+    link_list.forEach(async (element) => {
+        let href = element.attributes["data-href"].value;
+        console.log(href);
+
+        let blockIdFromHref = href.replace('siyuan://blocks/', '');
+        let icon = await queryDocIcon(blockIdFromHref);
         let iconHTML = `<span data-type="emoji">${icon} </span>`;
         let prevSibling = element?.previousElementSibling;
 
