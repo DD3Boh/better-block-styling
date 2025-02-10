@@ -9,44 +9,25 @@ export const setStyleAttr = async (blockId, value) => {
 }
 
 export const insertIcon = async (outerElement) => {
-    let blockId = outerElement.getAttribute("data-node-id")
-    let ref_list = outerElement.querySelectorAll("span[data-type='block-ref']");
-    let link_list = outerElement.querySelectorAll("span[data-type='a'][data-href^='siyuan://blocks/']");
+    const blockId = outerElement.getAttribute("data-node-id")
+    const elements = outerElement.querySelectorAll("span[data-type='block-ref'], span[data-type='a'][data-href^='siyuan://blocks/']");
 
-    ref_list.forEach(async (element) => {
-        let refBlockId = element.attributes["data-id"].value;
-        let icon = await queryDocIcon(refBlockId);
-        let iconHTML = `<span data-type="emoji">${icon} </span>`;
-        let prevSibling = element?.previousElementSibling;
+    for (const element of elements) {
+        const targetBlockId = element.attributes["data-id"]?.value
+            || element.attributes["data-href"]?.value.replace('siyuan://blocks/', '');
+        const icon = await queryDocIcon(targetBlockId);
+        const iconHTML = `<span data-type="emoji">${icon} </span>`;
+        const prevSibling = element.previousElementSibling;
+        let hasIcon = prevSibling?.attributes["data-type"]?.value === "emoji";
+        const iconMatches = prevSibling?.innerText.trim() === icon;
 
-        let elementHasIcon = prevSibling?.attributes["data-type"]?.value === "emoji";
-
-        if (!elementHasIcon)
+        if (!hasIcon)
             await element.insertAdjacentHTML('beforebegin', iconHTML);
-        else if (prevSibling?.innerText.trim() !== icon)
+        else if (!iconMatches)
             prevSibling.outerHTML = iconHTML;
+    }
 
-        await updateBlock("dom", outerElement.outerHTML, blockId);
-    });
-
-    link_list.forEach(async (element) => {
-        let href = element.attributes["data-href"].value;
-        console.log(href);
-
-        let blockIdFromHref = href.replace('siyuan://blocks/', '');
-        let icon = await queryDocIcon(blockIdFromHref);
-        let iconHTML = `<span data-type="emoji">${icon} </span>`;
-        let prevSibling = element?.previousElementSibling;
-
-        let elementHasIcon = prevSibling?.attributes["data-type"]?.value === "emoji";
-
-        if (!elementHasIcon)
-            await element.insertAdjacentHTML('beforebegin', iconHTML);
-        else if (prevSibling?.innerText.trim() !== icon)
-            prevSibling.outerHTML = iconHTML;
-
-        await updateBlock("dom", outerElement.outerHTML, blockId);
-    });
+    await updateBlock("dom", outerElement.outerHTML, blockId);
 }
 
 export const refToEmbed = async (outerElement: Element) => {
