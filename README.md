@@ -10,6 +10,8 @@ It also provides pre-made stylings for blocks like superblocks and embedded bloc
 
 - **Theme your paragraphs**: Use pre-made cards templates to theme your paragraph blocks.
 - **Theme your blocks**: Bring a slicker theming to superblocks, embedded blocks and more.
+- **Insert and update ref icons**: Recover the icons from your files and insert them in the references, permanently.
+- **Utility functions**: Use the plugin's utility functions to convert some block types into different block types.
 
 ## Usage
 
